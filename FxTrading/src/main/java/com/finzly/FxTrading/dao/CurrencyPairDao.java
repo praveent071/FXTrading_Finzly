@@ -39,7 +39,6 @@ public class CurrencyPairDao {
 		try (Session session = factory.openSession()) {
 	        CurrencyPairEntity currencypairentity = session.get(CurrencyPairEntity.class, id);
 	        if (currencypairentity != null) {
-	        	//currencypairentity.setCurrencyname(currencypair.getCurrencyname());
 	        	Criteria criteria = session.createCriteria(CurrencyPairEntity.class);
 	    		criteria .add(Restrictions.eq("currencyname",currencypair.getCurrencyname().toLowerCase() ));
 	        	currencypairentity.setCurrencyvalue(currencypair.getCurrencyvalue());
